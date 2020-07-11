@@ -1,2 +1,2 @@
 # gormate
-GORM Mate for v2
+GORM Mate for `gorm.io/gorm`.
