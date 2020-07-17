@@ -86,7 +86,7 @@ func (o *Operator) Save(ctx context.Context, i NamedTable, selected ...string) e
 }
 
 func (o *Operator) Updates(ctx context.Context, i NamedTable, values map[string]interface{}) error {
-	db, err := o.db(ctx)
+	db, err := FromContext(ctx)
 	if err != nil {
 		return err
 	}
@@ -95,7 +95,7 @@ func (o *Operator) Updates(ctx context.Context, i NamedTable, values map[string]
 }
 
 func (o *Operator) UpdatesAll(ctx context.Context, i NamedTable, values map[string]interface{}, cond ...interface{}) error {
-	db, err := o.db(ctx)
+	db, err := FromContext(ctx)
 	if err != nil {
 		return err
 	}
