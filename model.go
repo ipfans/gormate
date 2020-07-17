@@ -10,3 +10,7 @@ type Model struct {
 	UpdatedAt TimeFormat     `json:"updatedAt" gorm:"autoUpdateTime;type:time"`
 	DeletedAt gorm.DeletedAt `json:"-" gorm:"index"`
 }
+
+func (m *Model) PK() uint64 {
+	return m.ID
+}
