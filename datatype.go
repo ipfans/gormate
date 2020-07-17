@@ -6,8 +6,10 @@ import (
 	"time"
 )
 
+// TimeFormat with json/db outputs
 type TimeFormat time.Time
 
+// MarshalJSON for json.Marshaler.
 func (tf TimeFormat) MarshalJSON() ([]byte, error) {
 	str := time.Time(tf).Format(time.RFC3339)
 	return []byte("\"" + str + "\""), nil
